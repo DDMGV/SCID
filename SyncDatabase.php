@@ -40,7 +40,7 @@ class SyncDatabase
         return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }
 
-    public function syncTableStructure($table_name): void
+    private function syncTableStructure($table_name): void
     {
         $dev_db_columns = $this->getTableColumns($this->develop_db, $table_name);
         $prod_db_columns = $this->getTableColumns($this->production_db, $table_name);
